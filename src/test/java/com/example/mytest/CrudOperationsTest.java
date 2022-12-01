@@ -51,10 +51,9 @@ public class CrudOperationsTest {
 
 	public void testGetSingleUseActivity() {
 
-		given().log().all().pathParam("id", "2")
-				.when().get("/api/users/{id}").then().log().all().assertThat().statusCode(200).assertThat()
-				.contentType(ContentType.JSON).assertThat().body("data.id", equalTo(2)).assertThat()
-				.body("data.email", equalTo("janet.weaver@reqres.in")).assertThat()
+		given().log().all().pathParam("id", "2").when().get("/api/users/{id}").then().log().all().assertThat()
+				.statusCode(200).assertThat().contentType(ContentType.JSON).assertThat().body("data.id", equalTo(2))
+				.assertThat().body("data.email", equalTo("janet.weaver@reqres.in")).assertThat()
 				.body("data.first_name", equalTo("Janet")).assertThat().body("data.last_name", equalTo("Weaver"))
 				.assertThat().body("data.avatar", equalTo("https://reqres.in/img/faces/2-image.jpg")).assertThat()
 				.body("support.url", equalTo("https://reqres.in/#support-heading")).assertThat().body("support.text",
@@ -77,24 +76,22 @@ public class CrudOperationsTest {
 				.body("support.text",
 						equalTo("To keep ReqRes free, contributions towards server costs are appreciated!"));
 
-		
-		System.out.println("Register json body " +loadJsonFile().toJSONString());
-		
+		System.out.println("Register json body " + loadJsonFile().toJSONString());
+
 		Reporter.log("Success 200 status code ");
 
 	}
-	
 
 	public JSONObject loadJsonFile() {
 		JSONObject ob = null;
 		JSONParser json = new JSONParser();
-		
-		try(FileReader fileReader = new FileReader("./files/Register.json")) {
+
+		try (FileReader fileReader = new FileReader("./files/Register.json")) {
 			ob = (JSONObject) json.parse(fileReader);
 		} catch (IOException | ParseException e) {
 			e.printStackTrace();
 		}
-		
+
 		return ob;
 	}
 
