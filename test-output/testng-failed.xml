@@ -5,7 +5,7 @@
     <classes>
       <class name="com.example.mytest.CrudOperationsTest">
         <methods>
-          <include name="testGetSingleUser"/>
+          <include name="testGetSingleResourceActivity"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.example.mytest.CrudOperationsTest -->

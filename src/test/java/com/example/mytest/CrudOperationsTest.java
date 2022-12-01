@@ -14,16 +14,19 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.testng.Assert.assertEquals;
 
-import org.json.JSONObject;
+import java.io.FileReader;
+import java.io.IOException;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 public class CrudOperationsTest {
-
-	JSONObject requestBody;
 
 	@BeforeTest
 	public void setUp() {
 		RestAssured.baseURI = "https://reqres.in";
-		requestBody = new JSONObject();
 	}
 
 	@Test
@@ -49,7 +52,6 @@ public class CrudOperationsTest {
 	public void testGetSingleUseActivity() {
 
 		given().log().all().pathParam("id", "2")
-
 				.when().get("/api/users/{id}").then().log().all().assertThat().statusCode(200).assertThat()
 				.contentType(ContentType.JSON).assertThat().body("data.id", equalTo(2)).assertThat()
 				.body("data.email", equalTo("janet.weaver@reqres.in")).assertThat()
@@ -75,12 +77,29 @@ public class CrudOperationsTest {
 				.body("support.text",
 						equalTo("To keep ReqRes free, contributions towards server costs are appreciated!"));
 
+		
+		System.out.println("Register json body " +loadJsonFile().toJSONString());
+		
 		Reporter.log("Success 200 status code ");
 
 	}
+	
+
+	public JSONObject loadJsonFile() {
+		JSONObject ob = null;
+		JSONParser json = new JSONParser();
+		
+		try(FileReader fileReader = new FileReader("./files/Register.json")) {
+			ob = (JSONObject) json.parse(fileReader);
+		} catch (IOException | ParseException e) {
+			e.printStackTrace();
+		}
+		
+		return ob;
+	}
 
 	public JSONObject createJsonObject(String httpMethod) {
-
+		JSONObject requestBody = new JSONObject();
 		switch (httpMethod) {
 		case "POST":
 			requestBody.put("name", "Efrain");

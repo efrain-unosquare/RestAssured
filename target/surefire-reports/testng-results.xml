@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[Success 200 status code ]]>
+    </line>
+    <line>
+      <![CDATA[Success 200 status code ]]>
+    </line>
+    <line>
+      <![CDATA[Success status code validation]]>
+    </line>
+    <line>
+      <![CDATA[{"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://reqres.in/img/faces/3-image.jpg"},{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://reqres.in/img/faces/4-image.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://reqres.in/img/faces/5-image.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://reqres.in/img/faces/6-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2022-12-01T14:50:54 CST" name="com.example.mytest.CrudOperationsTest" finished-at="2022-12-01T14:50:57 CST" duration-ms="2954">
+    <groups>
+    </groups>
+    <test started-at="2022-12-01T14:50:54 CST" name="Command line test" finished-at="2022-12-01T14:50:57 CST" duration-ms="2954">
+      <class name="com.example.mytest.CrudOperationsTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.mytest.CrudOperationsTest@247bddad]" started-at="2022-12-01T14:50:54 CST" name="setUp" finished-at="2022-12-01T14:50:54 CST" duration-ms="209" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="testAddUser()[pri:0, instance:com.example.mytest.CrudOperationsTest@247bddad]" started-at="2022-12-01T14:50:54 CST" name="testAddUser" finished-at="2022-12-01T14:50:56 CST" duration-ms="1494" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddUser -->
+        <test-method signature="testGetSingleResourceActivity()[pri:0, instance:com.example.mytest.CrudOperationsTest@247bddad]" started-at="2022-12-01T14:50:56 CST" name="testGetSingleResourceActivity" finished-at="2022-12-01T14:50:57 CST" duration-ms="717" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Success 200 status code ]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- testGetSingleResourceActivity -->
+        <test-method signature="testGetSingleUseActivity()[pri:0, instance:com.example.mytest.CrudOperationsTest@247bddad]" started-at="2022-12-01T14:50:57 CST" name="testGetSingleUseActivity" finished-at="2022-12-01T14:50:57 CST" duration-ms="266" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Success 200 status code ]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- testGetSingleUseActivity -->
+        <test-method signature="testGetUser()[pri:0, instance:com.example.mytest.CrudOperationsTest@247bddad]" started-at="2022-12-01T14:50:57 CST" name="testGetUser" finished-at="2022-12-01T14:50:57 CST" duration-ms="251" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Success status code validation]]>
+            </line>
+            <line>
+              <![CDATA[{"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://reqres.in/img/faces/3-image.jpg"},{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://reqres.in/img/faces/4-image.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://reqres.in/img/faces/5-image.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://reqres.in/img/faces/6-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- testGetUser -->
+      </class> <!-- com.example.mytest.CrudOperationsTest -->
+    </test> <!-- Command line test -->
+  </suite> <!-- com.example.mytest.CrudOperationsTest -->
+</testng-results>
