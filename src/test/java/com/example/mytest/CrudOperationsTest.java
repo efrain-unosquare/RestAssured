@@ -17,48 +17,70 @@ import static org.testng.Assert.assertEquals;
 import org.json.JSONObject;
 
 public class CrudOperationsTest {
-	
+
 	JSONObject requestBody;
-	
+
 	@BeforeTest
 	public void setUp() {
-		RestAssured.baseURI="https://reqres.in";
+		RestAssured.baseURI = "https://reqres.in";
 		requestBody = new JSONObject();
 	}
-	
+
 	@Test
 	public void testAddUser() {
-		given().header("content-type", "application/json").log().all().body(createJsonObject("POST").toString())
-		.when().post("/api/users")
-		.then().log().all().assertThat().statusCode(201).body("name", equalTo("Efrain"));
+		given().header("content-type", "application/json").log().all().body(createJsonObject("POST").toString()).when()
+				.post("/api/users").then().log().all().assertThat().statusCode(201).body("name", equalTo("Efrain"));
 	}
-	
+
 	@Test
 	public void testGetUser() {
 		RequestSpecification request = RestAssured.given().log().all();
 		Response response = request.get("/api/users");
-		
+
 		assertEquals(response.getStatusCode(), 200);
 		Reporter.log("Success status code validation");
-		
+
 		response.then().body("data.size()", greaterThan(0));
 		Reporter.log(response.body().asString());
 	}
-	
+
+	@Test
+
+	public void testGetSingleUseActivity() {
+
+		given().log().all().pathParam("id", "2")
+
+				.when().get("/api/users/{id}")
+				.then().log().all()
+				.assertThat().statusCode(200).assertThat().contentType(ContentType.JSON)
+				.assertThat().body("data.id", equalTo(2))
+				.assertThat().body("data.email", equalTo("janet.weaver@reqres.in"))
+				.assertThat().body("data.first_name", equalTo("Janet"))
+				.assertThat().body("data.last_name", equalTo("Weaver"))
+				.assertThat().body("data.avatar", equalTo("https://reqres.in/img/faces/2-image.jpg"))
+				.assertThat().body("support.url", equalTo("https://reqres.in/#support-heading"))
+				.assertThat().body("support.text",
+						equalTo("To keep ReqRes free, contributions towards server costs are appreciated!"));
+
+		Reporter.log("Success 200 status code ");
+
+	}
+
 	public JSONObject createJsonObject(String httpMethod) {
-		
-		switch(httpMethod) {
-		case "POST": 
+
+		switch (httpMethod) {
+		case "POST":
 			requestBody.put("name", "Efrain");
 			requestBody.put("job", "trainee");
 			break;
-		case "PUT": 
+		case "PUT":
 			requestBody.put("name", "Efrain");
 			requestBody.put("job", "zion resident");
 			break;
-		default: break;
+		default:
+			break;
 		}
-		
+
 		return requestBody;
 	}
 }
