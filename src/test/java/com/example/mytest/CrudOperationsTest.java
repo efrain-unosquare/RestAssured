@@ -65,6 +65,27 @@ public class CrudOperationsTest {
 		Reporter.log("Success 200 status code ");
 
 	}
+	
+	@Test
+	public void testGetSingleResourceActivity() {
+
+		RequestSpecification request = RestAssured.given().log().all().pathParam("id", "2");
+		Response response = request.get("/api/unknown/{id}");
+
+		response.then().log().all()
+				.assertThat().statusCode(200)
+				.assertThat().body("data.id", equalTo(2))
+				.assertThat().body("data.name", equalTo("fuchsia rose"))
+				.assertThat().body("data.year", equalTo(2001))
+				.assertThat().body("data.color", equalTo("#C74375"))
+				.assertThat().body("data.pantone_value", equalTo("17-2031"))
+				.assertThat().body("support.url", equalTo("https://reqres.in/#support-heading"))
+				.assertThat().body("support.text", equalTo("To keep ReqRes free, contributions towards server costs are appreciated!"));
+		
+
+		Reporter.log("Success 200 status code ");
+
+	}
 
 	public JSONObject createJsonObject(String httpMethod) {
 
