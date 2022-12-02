@@ -1,27 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
+<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
-    <line>
-      <![CDATA[Success 200 status code ]]>
-    </line>
   </reporter-output>
-  <suite started-at="2022-12-01T15:20:11 CST" name="Default suite" finished-at="2022-12-01T15:20:14 CST" duration-ms="3419">
+  <suite started-at="2022-12-01T18:14:43 CST" name="Default suite" finished-at="2022-12-01T18:14:47 CST" duration-ms="3798">
     <groups>
     </groups>
-    <test started-at="2022-12-01T15:20:11 CST" name="Default test" finished-at="2022-12-01T15:20:14 CST" duration-ms="3419">
-      <class name="com.example.mytest.CrudOperationsTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.mytest.CrudOperationsTest@1e802ef9]" started-at="2022-12-01T15:20:11 CST" name="setUp" finished-at="2022-12-01T15:20:11 CST" duration-ms="483" status="PASS">
+    <test started-at="2022-12-01T18:14:43 CST" name="Default test" finished-at="2022-12-01T18:14:47 CST" duration-ms="3798">
+      <class name="com.example.mytest.PostRequestTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.example.mytest.PostRequestTest@1677d1]" started-at="2022-12-01T18:14:43 CST" name="setUp" finished-at="2022-12-01T18:14:43 CST" duration-ms="503" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testGetSingleResourceActivity()[pri:0, instance:com.example.mytest.CrudOperationsTest@1e802ef9]" started-at="2022-12-01T15:20:11 CST" name="testGetSingleResourceActivity" finished-at="2022-12-01T15:20:14 CST" duration-ms="2896" status="PASS">
+        <test-method signature="testPostRegister()[pri:0, instance:com.example.mytest.PostRequestTest@1677d1]" started-at="2022-12-01T18:14:43 CST" name="testPostRegister" finished-at="2022-12-01T18:14:47 CST" duration-ms="3252" status="PASS">
           <reporter-output>
-            <line>
-              <![CDATA[Success 200 status code ]]>
-            </line>
           </reporter-output>
-        </test-method> <!-- testGetSingleResourceActivity -->
-      </class> <!-- com.example.mytest.CrudOperationsTest -->
+        </test-method> <!-- testPostRegister -->
+      </class> <!-- com.example.mytest.PostRequestTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
