@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.example.mytest.CrudOperationsTest">
+      <class name="ouauth.GmailApiOauth">
         <methods>
-          <include name="testGetSingleResourceActivity"/>
-          <include name="setUp"/>
+          <include name="testDeleteEmail"/>
+          <include name="beforeClass"/>
         </methods>
-      </class> <!-- com.example.mytest.CrudOperationsTest -->
+      </class> <!-- ouauth.GmailApiOauth -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
