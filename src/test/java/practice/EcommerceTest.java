@@ -27,8 +27,10 @@ public class EcommerceTest {
 	RequestSpecification requestSpec;
 	ResponseSpecification responseSpec;
 	
-	private static String email = "trainingrestA@gmail.com";
-	private static String password = "Kingtest@oauth2";
+	// TODO add your email
+	private static String email = "";
+	//TODO add your password
+	private static String password = "";
 	private static String token = "";
 	private static String userId = "";
 	private static String productId = "";
