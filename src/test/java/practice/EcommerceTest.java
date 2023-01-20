@@ -25,12 +25,10 @@ import java.util.List;
 public class EcommerceTest {
 	
 	RequestSpecification requestSpec;
-	ResponseSpecification responseSpec;
+	ResponseSpecification responseSpec; 
 	
-	// TODO add your email
-	private static String email = "";
-	//TODO add your password
-	private static String password = "";
+	private static String email = "trainingrestA@gmail.com";
+	private static String password = "Kingtest@oauth2";
 	private static String token = "";
 	private static String userId = "";
 	private static String productId = "";
@@ -145,7 +143,6 @@ public class EcommerceTest {
 		Assert.assertEquals("Product Deleted Successfully", jsonRes.getString("message"));
 		
 	}
-	
 	@Test(priority = 5)
 	public void testDeleteOrder() {
 		requestSpec = setContentTypeRequestSpec("JSON");
